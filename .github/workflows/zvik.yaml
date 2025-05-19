@@ -15,4 +15,4 @@ jobs:
       - name: Docker Build+Tag
         run: docker build -t ${{ secrets.DOCKER_USERNAME}}/devopstestpython:1.0 .
       - name: Push
-        run: docker push ${{ secrets.DOCKER_USERNAME}}/devopstestpython:1.0
+        run: docker push ${{ secrets.DOCKER_USERNAME}}/devopstestpython:1.1
