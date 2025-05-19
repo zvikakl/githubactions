@@ -10,3 +10,9 @@ jobs:
         uses: actions/checkout@v4  # It just does git clone but for the repo that you are currently using
       - name: Print Hello World
         run: echo "Hello, GitHub Actions!"
+      - name: DockerHub Login
+        run: echo "${{ secrets.DOCKER_PASSWORD}}" docker login -u "${{ secrets.DOCKER_USERNAME}}" --password-stdin
+      - name: Docker Build+Tag
+        run: docker build -t "${{ secrets.DOCKER_USERNAME}}/devopstestpython:1.0 .
+        -name: Docker Push
+        run: docker push "${{ secrets.DOCKER_USERNAME}}/devopstestpython:1.0
